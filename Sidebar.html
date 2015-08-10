@@ -1,0 +1,22 @@
+<div id="output">
+test
+</div>
+<form>
+  <fieldset>
+    <label for="target">Type Something:</label>
+    <input id="target" type="text">
+  </fieldset>
+</form>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<script>
+  $("#target").keydown(function(e){
+    //CV keydown combo
+    if(e.keyCode == 86){
+      $("#output").append("I've been pressed!");
+      google.script.run.appendTheStuff();
+    }
+  })
+  
+  
+</script>
