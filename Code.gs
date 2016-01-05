@@ -28,12 +28,16 @@ function onInstall(e) {
  * Opens a sidebar in the document containing the add-on's user interface.
  */
 function showSidebar() {
-  var ui = HtmlService.createHtmlOutputFromFile('Sidebar')
-      .setTitle('Cookie');
+  var ui = HtmlService.createHtmlOutputFromFile('VimOn')
+      .setTitle('VimCommander');
   DocumentApp.getUi().showSidebar(ui);
 }
 
 
 function appendTheStuff() {
   DocumentApp.getActiveDocument().getBody().editAsText().appendText("I've been pressed");
+}
+
+function getDocumentID() {
+  return DocumentApp.getActiveDocument().getId();
 }
