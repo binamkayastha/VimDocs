@@ -1,15 +1,22 @@
-<div id="output">
-test
+<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+<!-- The CSS package above applies Google styling to buttons and other elements. -->
+
+<div id="wrapper">
+ <div id="output">
+   test
+ </div>
+  <form>
+    <fieldset>
+      <label for="target">Type Something:</label>
+      <input id="target" type="text">
+    </fieldset>
+  </form>
 </div>
-<form>
-  <fieldset>
-    <label for="target">Type Something:</label>
-    <input id="target" type="text">
-  </fieldset>
-</form>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 <script>
+//google.script.run.getDocumentId() <-- supposed to be able to call keydown function from this id, but didn't work
+
   $("#target").keydown(function(e){
     //CV keydown combo
     if(e.keyCode == 86){
@@ -17,6 +24,23 @@ test
       google.script.run.appendTheStuff();
     }
   })
-  
-  
+
+//  Another attempted below in order to try get keypresses from the document itself instead of the sidebar
+//  var iframe = document.getElementsByTagName("iframe")[0];
+//  if (iframe) {
+//    iframe.contentDocument.addEventListener("keypress", function(evt) {
+//       $("#output").append("I've been pressed!");
+//
+//    }, false);
+//  }
+
+
 </script>
+
+<style type="text/css">
+.wrapper {
+  width: 100%;
+  height: 100%;
+  border: 10px solid black;
+}
+</style>
